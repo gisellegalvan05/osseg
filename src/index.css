@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .scrollbar::-webkit-scrollbar {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .scrollbar::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background: #f7f4ed;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd4e0;
+      border-radius: 100vh;
+      border: 3px solid #f6f7ed;
+    }
+  
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #7a98be;
+    }
+  }
+
+.cool-link {
+    display: inline-block;
+    color: #009A96;
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #1A716F;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+   
+}
+
+.cool-link-white {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.cool-link-white::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width .3s;
+}
+
+.cool-link-white:hover::after {
+    width: 100%;
+   
+}
+
+.main-bg-image{
+    background-image: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 10%, rgba(255,255,255,0) 30%),
+     url('/img/main1.jpg');
+}
+
+.bg-gradient-white{
+    background: rgb(255,255,255);
+background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 70%);
+}
