@@ -1,5 +1,8 @@
+import * as Scroll from "react-scroll";
 
 function JoinUs() {
+  const scroller = Scroll.scroller;
+  
   return (
     <div className="xs:w-4/5 md:w-1/2 ml-auto mr-auto mt-14">
       <div>
