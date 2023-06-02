@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html","./src/**/*.jsx", "./node_modules/tw-elements/dist/js/**/*.js",'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
+  content: ["index.html","./src/**/*.jsx", "./node_modules/tw-elements/dist/js/**/*.js",'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'],
   theme: {
     colors: {
       // Configure your color palette here

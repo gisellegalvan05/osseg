@@ -1,6 +1,7 @@
 import React, { useRef, useEffect,useState  } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import * as Scroll from 'react-scroll';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,7 @@ function classNames(...classes) {
 
   const imgRef = useRef(null);
   const block = useRef(null);
+  const Element = Scroll.Element;
 
   // useEffect(() => {
   //   const el = imgRef.current;
@@ -42,6 +44,7 @@ function classNames(...classes) {
   // }, []);
 
    return (
+    <Element name = "prev">
     <div className="bg-soft lg:py-10 sm:py-32 xs:pt-0 xs:pb-16 relative flex">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl xs:text-center">
@@ -150,6 +153,7 @@ function classNames(...classes) {
         </div>
       </div>
     </div>
+    </Element>
   );
 }
 

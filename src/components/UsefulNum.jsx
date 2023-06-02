@@ -6,6 +6,7 @@ function UsefulNum() {
   const Element = Scroll.Element;
 
   return (
+    <Element name = "phones">
     <div id="usefulNum" className=" bg-secondary2 lg:py-16 xs:pt-0 xs:pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl xs:text-center">
@@ -75,6 +76,7 @@ function UsefulNum() {
         </div>
       </div>
     </div>
+    </Element>
   );
 }
 

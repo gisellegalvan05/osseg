@@ -1,5 +1,10 @@
+import * as Scroll from 'react-scroll';
+
 function LatestNews() {
+  const Element = Scroll.Element;
+
   return (
+    <Element  name="news">
     <div className="bg-secondary2 xs:py-8 xs:pb-0 xs:auto lg:h-96 relative flex">
     <div className=" z-40 mx-auto relative -top-44 lg:max-w-100r sm:max-w-7xl px-6 lg:px-8">
       <div className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-7 sm:mt-8 sm:pb-16 lg:pt-7 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
@@ -82,6 +87,7 @@ function LatestNews() {
       </div>
     </div>
   </div>
+  </Element>
   )
 }
 

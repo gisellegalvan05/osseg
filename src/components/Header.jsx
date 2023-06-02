@@ -2,18 +2,18 @@ import React, { useState, Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useScrollPosition } from "../hooks/useScrollPosition";
-import { Link, useLocation } from 'react-router-dom'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import * as Scroll from 'react-scroll';
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import * as Scroll from "react-scroll";
 
 const navigation = [
-  { key: 'index', name: "INICIO", href: "/home", current: true },
-  { key: 'aboutus', name: "SOBRE NOSOTROS", href: "/nosotros", current: false },
-  { key: 'join', name: "QUIERO AFILIARME", href: "/afiliarse", current: false },
-  { key: 'sites', name: "DELEGACIONES", href: "/delegaciones", current: false },
-  { key: 'news', name: "NOTICIAS", href: "#", current: false },
-  { key: 'phones', name: "TELÉFONOS ÚTILES", href: "#usefulNum", current: false },
-  { key: 'prev', name: "PREVENCIÓN", href: "#", current: false },
+  { key: "index", name: "INICIO", href: "/home", current: true },
+  { key: "aboutus", name: "SOBRE NOSOTROS", href: "/nosotros", current: false },
+  { key: "join", name: "QUIERO AFILIARME", href: "/afiliarse", current: false },
+  { key: "sites", name: "DELEGACIONES", href: "/delegaciones", current: false },
+//  { key: "news", name: "NOTICIAS", href: "#", current: false },
+//  { key: "phones", name: "TELÉFONOS ÚTILES", href: "#usefulNum", current: false},
+//  { key: "prev", name: "PREVENCIÓN", href: "#", current: false },
 ];
 
 function classNames(...classes) {
@@ -21,7 +21,75 @@ function classNames(...classes) {
 }
 
 function Header() {
-  
+  const path = useLocation().pathname;
+  const location = path.split("/")[1];
+  const history = useNavigate();
+  const scroller = Scroll.scroller;
+
+  const scrollToNews = () => {
+    scroller.scrollTo("news", {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: 1600,
+    });
+  };
+
+  const scrollToPhones = () => {
+    scroller.scrollTo("phones", {
+      duration: 1000,
+      delay: 100,
+      smooth: true,
+      offset: -50,
+    });
+  };
+
+  const scrollToPrev = () => {
+    scroller.scrollTo("prev", {
+      duration: 1000,
+      delay: 100,
+      smooth: true,
+      offset: -100,
+    });
+  };
+
+
+  const goToHomeAndScrollNews = async () => {
+    await closeMobile();
+    await history("/home");
+    await scroller.scrollTo("news", {
+      duration: 1500,
+      delay: 100,
+      smooth: true,
+      offset: 1600,
+    });
+  };
+
+  const goToHomeAndScrollPrev = async () => {
+    await closeMobile();
+    await history("/home");
+    await scroller.scrollTo("prev", {
+      duration: 1000,
+      delay: 100,
+      smooth: true,
+      offset: -100,
+    });
+  };
+
+  const goToHomeAndScrollPhones = async () => {
+    await closeMobile();
+    await history("/home");
+    await scroller.scrollTo("phones", {
+      duration: 1000,
+      delay: 100,
+      smooth: true,
+      offset: -50,
+    });
+  };
+
+
+  const closeMobile = () => {};
+
   const scrollPosition = useScrollPosition();
 
   return (
@@ -55,99 +123,114 @@ function Header() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-5">
                     <Menu>
-                    {navigation.map((item) => (
-                      <div>
-                        {item.key === 'aboutus' ?
+                      {navigation.map((item) => (
                         <div>
-                          <div>
-                            <Menu.Button className={classNames(
-                              item.current
-                                ? "bg-transparent text-primary2 cool-link"
-                                : "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link",
-                              "mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 inline-flex w-full justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-                            )}
-                            >
-                            {item.name}
-                            </Menu.Button>
-                          </div>
-                          <Transition
-                          as={Fragment}
-                          enter="transition ease-out duration-100"
-                          enterFrom="transform opacity-0 scale-95"
-                          enterTo="transform opacity-100 scale-100"
-                          leave="transition ease-in duration-75"
-                          leaveFrom="transform opacity-100 scale-100"
-                          leaveTo="transform opacity-0 scale-95"
-                        >
-                          <Menu.Items className="absolute sm:left-10per lg:left-1/4 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                            <div className="px-1 py-1 ">
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <button
-                                    className={`${
-                                      active ? 'bg-gray-200' : ''
-                                    } text-primary1 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                  >
-                                    Historia
-                                  </button>
-                                )}
-                              </Menu.Item>
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <button
-                                    className={`${
-                                      active ? 'bg-gray-200' : ''
-                                    } text-primary1 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                  >
-                                    Autoridades
-                                  </button>
-                                )}
-                              </Menu.Item>
+                          {item.key === "aboutus" ? (
+                            <div>
+                              <div>
+                                <Menu.Button
+                                  className={classNames(
+                                    item.current
+                                      ? "bg-transparent text-primary2 cool-link"
+                                      : "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link",
+                                    "mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 inline-flex w-full justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                                  )}
+                                >
+                                  {item.name}
+                                </Menu.Button>
+                              </div>
+                              <Transition
+                                as={Fragment}
+                                enter="transition ease-out duration-100"
+                                enterFrom="transform opacity-0 scale-95"
+                                enterTo="transform opacity-100 scale-100"
+                                leave="transition ease-in duration-75"
+                                leaveFrom="transform opacity-100 scale-100"
+                                leaveTo="transform opacity-0 scale-95"
+                              >
+                                <Menu.Items className="absolute sm:left-10per lg:left-1/4 right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                  <div className="px-1 py-1 ">
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <button
+                                          className={`${
+                                            active ? "bg-gray-200" : ""
+                                          } text-primary1 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                        >
+                                          Historia
+                                        </button>
+                                      )}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <button
+                                          className={`${
+                                            active ? "bg-gray-200" : ""
+                                          } text-primary1 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                        >
+                                          Autoridades
+                                        </button>
+                                      )}
+                                    </Menu.Item>
+                                  </div>
+                                  <div className="px-1 py-1">
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <button
+                                          className={`${
+                                            active ? "bg-gray-200" : ""
+                                          } text-primary1 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                        >
+                                          Números de contacto
+                                        </button>
+                                      )}
+                                    </Menu.Item>
+                                  </div>
+                                </Menu.Items>
+                              </Transition>
                             </div>
-                            <div className="px-1 py-1">
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <button
-                                    className={`${
-                                      active ? 'bg-gray-200' : ''
-                                    } text-primary1 group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                                  >
-                                    Números de contacto
-                                  </button>
+                          ) : (
+                            <div>
+                              <NavLink
+                                key={item.key}
+                                to={item.href}
+                                className={classNames(
+                                  item.current
+                                    ? "bg-transparent text-primary2 cool-link"
+                                    : "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link",
+                                  "mx-1 px-3 py-2 text-sm font-medium transition-all duration-300"
                                 )}
-                              </Menu.Item>
-                              
+                                aria-current={item.current ? "page" : undefined}
+                              >
+                                {item.name}
+                              </NavLink>
                             </div>
-                          </Menu.Items>
-                        </Transition>
+                            
+                          )}
                         </div>
-                        : 
+                      ))}
+                      
                         <div>
-                          <Link
-                            key={item.key}
-                            to={item.href}
-                            className={classNames(
-                              item.current
-                                ? "bg-transparent text-primary2 cool-link"
-                                : "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link",
-                              "mx-1 px-3 py-2 text-sm font-medium transition-all duration-300"
-                            )}
-                            aria-current={item.current ? "page" : undefined}
-                          >
-                            {item.name}
-                          </Link>
-                        </div>}
-
-                      </div>
-                    ))}
+                        <button 
+                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
+                        onClick={location === 'home' ? scrollToNews : goToHomeAndScrollNews}
+                        >Noticias</button>
+                        <button 
+                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
+                        onClick={location === 'home' ? scrollToPhones : goToHomeAndScrollPhones}
+                        >Teléfonos útiles</button>
+                        <button 
+                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
+                        onClick={location === 'home' ? scrollToPrev : goToHomeAndScrollPrev}
+                        >Prevención</button>
+                        </div>
+                      
                     </Menu>
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a
-                  className= "text-white bg-primary1 hover:bg-primary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer"
-                >
+                <a className="text-white bg-primary1 hover:bg-primary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer">
                   Ingresar
                 </a>
               </div>
@@ -194,7 +277,7 @@ function EditInactiveIcon(props) {
         strokeWidth="2"
       />
     </svg>
-  )
+  );
 }
 
 function EditActiveIcon(props) {
@@ -212,7 +295,7 @@ function EditActiveIcon(props) {
         strokeWidth="2"
       />
     </svg>
-  )
+  );
 }
 
 function DuplicateInactiveIcon(props) {
@@ -236,7 +319,7 @@ function DuplicateInactiveIcon(props) {
         strokeWidth="2"
       />
     </svg>
-  )
+  );
 }
 
 function DuplicateActiveIcon(props) {
@@ -260,7 +343,7 @@ function DuplicateActiveIcon(props) {
         strokeWidth="2"
       />
     </svg>
-  )
+  );
 }
 
 function ArchiveInactiveIcon(props) {
@@ -291,7 +374,7 @@ function ArchiveInactiveIcon(props) {
       />
       <path d="M8 12H12" stroke="#A78BFA" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function ArchiveActiveIcon(props) {
@@ -322,7 +405,7 @@ function ArchiveActiveIcon(props) {
       />
       <path d="M8 12H12" stroke="#A78BFA" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function MoveInactiveIcon(props) {
@@ -337,7 +420,7 @@ function MoveInactiveIcon(props) {
       <path d="M16 4L8 12" stroke="#A78BFA" strokeWidth="2" />
       <path d="M8 6H4V16H14V12" stroke="#A78BFA" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function MoveActiveIcon(props) {
@@ -352,7 +435,7 @@ function MoveActiveIcon(props) {
       <path d="M16 4L8 12" stroke="#C4B5FD" strokeWidth="2" />
       <path d="M8 6H4V16H14V12" stroke="#C4B5FD" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function DeleteInactiveIcon(props) {
@@ -375,7 +458,7 @@ function DeleteInactiveIcon(props) {
       <path d="M3 6H17" stroke="#A78BFA" strokeWidth="2" />
       <path d="M8 6V4H12V6" stroke="#A78BFA" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 function DeleteActiveIcon(props) {
@@ -398,7 +481,7 @@ function DeleteActiveIcon(props) {
       <path d="M3 6H17" stroke="#C4B5FD" strokeWidth="2" />
       <path d="M8 6V4H12V6" stroke="#C4B5FD" strokeWidth="2" />
     </svg>
-  )
+  );
 }
 
 export default Header;
