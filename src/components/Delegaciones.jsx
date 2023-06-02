@@ -1,5 +1,3 @@
-import React from 'react'
-
 const sedes = [
     {
       name: 'OSSEG SEDE CENTRAL C. PELLEGRINI',

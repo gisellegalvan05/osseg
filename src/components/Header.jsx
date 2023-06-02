@@ -1,13 +1,12 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useScrollPosition } from "../hooks/useScrollPosition";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import * as Scroll from "react-scroll";
 
 const navigation = [
-  { key: "index", name: "INICIO", href: "/home", current: true },
+  { key: "index", name: "INICIO", href: "/", current: true },
   { key: "aboutus", name: "SOBRE NOSOTROS", href: "/nosotros", current: false },
   { key: "join", name: "QUIERO AFILIARME", href: "/afiliarse", current: false },
   { key: "sites", name: "DELEGACIONES", href: "/delegaciones", current: false },
@@ -37,7 +36,7 @@ function Header() {
 
   const scrollToPhones = () => {
     scroller.scrollTo("phones", {
-      duration: 1000,
+      duration: 500,
       delay: 100,
       smooth: true,
       offset: -50,
@@ -56,7 +55,7 @@ function Header() {
 
   const goToHomeAndScrollNews = async () => {
     await closeMobile();
-    await history("/home");
+    await history("/");
     await scroller.scrollTo("news", {
       duration: 1500,
       delay: 100,
@@ -67,7 +66,7 @@ function Header() {
 
   const goToHomeAndScrollPrev = async () => {
     await closeMobile();
-    await history("/home");
+    await history("/");
     await scroller.scrollTo("prev", {
       duration: 1000,
       delay: 100,
@@ -78,9 +77,9 @@ function Header() {
 
   const goToHomeAndScrollPhones = async () => {
     await closeMobile();
-    await history("/home");
+    await history("/");
     await scroller.scrollTo("phones", {
-      duration: 1000,
+      duration: 500,
       delay: 100,
       smooth: true,
       offset: -50,
@@ -213,16 +212,16 @@ function Header() {
                         <div>
                         <button 
                         className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
-                        onClick={location === 'home' ? scrollToNews : goToHomeAndScrollNews}
-                        >Noticias</button>
-                        <button 
-                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToPhones : goToHomeAndScrollPhones}
                         >Teléfonos útiles</button>
                         <button 
                         className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToPrev : goToHomeAndScrollPrev}
                         >Prevención</button>
+                        <button 
+                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
+                        onClick={location === 'home' ? scrollToNews : goToHomeAndScrollNews}
+                        >Noticias</button>
                         </div>
                       
                     </Menu>

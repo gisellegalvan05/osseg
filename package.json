@@ -1,6 +1,7 @@
 {
   "name": "ossegmain",
-  "private": true,
+  "private": false,
+  "homepage": "localhost:8082/osseg/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

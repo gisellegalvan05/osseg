@@ -4,7 +4,6 @@ import Prevention from '../components/Prevention'
 import LatestNews from '../components/LatestNews'
 import News from '../components/News'
 import Sindicato from '../components/Sindicato'
-import { Flowbite } from 'flowbite-react'
 
 function Home() {
   return (
