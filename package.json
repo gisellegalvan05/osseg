@@ -1,7 +1,6 @@
 {
   "name": "ossegmain",
   "private": true,
-  "homepage":"ossegmain",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
