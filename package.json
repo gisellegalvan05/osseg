@@ -1,13 +1,14 @@
 {
   "name": "ossegmain",
   "private": true,
+  "homepage":"ossegmain",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview --port 8082"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.14",

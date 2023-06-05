@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Nosotros from './pages/Nosotros'
 import Afiliarse from './pages/Afiliarse'
 import Sedes from './pages/Sedes'
-import { createBrowserRouter, RouterProvider, } from "react-router-dom"
+import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import 'flowbite'
 
 const router = createBrowserRouter([

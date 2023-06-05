@@ -32,7 +32,7 @@ function News() {
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     className="object-cover shadow-md hover:shadow-xl rounded-lg"
-                    src="public/img/enfermero-01.png"
+                    src="/img/enfermero-01.png"
                     alt=""
                   />
                 </div>

@@ -11,7 +11,7 @@ function Sindicato() {
 
           <div className="absolute top-1/3 flex md:flex md:w-1/2 md:flex-row xs:flex-col xs:m-auto xs:left-0 xs:right-0 xs:w-3/4">
             <div className="lg:w-2/3 sm:w-full">
-              <img src="public/img/logo_ssra_2022.png" alt="" />
+              <img src="/img/logo_ssra_2022.png" alt="" />
               <p className="text-white text-lg mt-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
                 impedit harum reprehenderit vel sit neque modi.
