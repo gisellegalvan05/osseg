@@ -1,5 +1,19 @@
+import { useState, useEffect } from 'react';
+import { getNewsTopRequest } from '../controllers/novedadesApi';
+import moment from 'moment/moment';
 
 function News() {
+
+  const [news, setNews] = useState([])
+
+  useEffect( ()=>{
+   async function loadNews(){
+    const response = await  getNewsTopRequest()
+    setNews(response.data)
+    }
+    loadNews()
+  },[]);
+
   return (
     <>
     
@@ -25,7 +39,9 @@ function News() {
             id="scrollContainer"
             className="flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-8 scrollbar"
           >
-            <div
+          {
+          news.map( noticia =>(
+            <div key={noticia.NONovID}
               className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
             >
               <a href="#" className="space-y-4">
@@ -38,8 +54,8 @@ function News() {
                 </div>
                 <div className="">
                     <div className='flex pb-2'>
-                        <p className=' text-sm'> 
-                            19 Ene 2023
+                        <p className=' text-sm self-center'> 
+                        {moment(noticia.NONovFecha).format("DD MMM YYYY")}
                             </p>
                         <button className=' text-xs bg-secondary1 text-white px-3 py-2 rounded-lg ml-5'>
                             Afiliados
@@ -47,57 +63,12 @@ function News() {
                     </div>
                   <div className="text-lg leading-6 font-medium space-y-1">
                     <h3 className="font-bold text-gray-800 text-3xl mb-2">
-                      Título Noticia 1
+                    {noticia.NONovDescripcion}
                     </h3>
                   </div>
                   <div className="text-lg">
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad recusandae, consequatur corrupti vel quisquam id itaque
-                      nam
-                    </p>
-                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-24 mt-3 relative float-right
-                    hover:bg-primary2
-                    '>
-                    <p className="font-medium text-sm text-white">
-                      Leer más<span className="text-white">&hellip;</span>
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            
-            <div
-              className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
-            >
-              <a href="#" className="space-y-4">
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="object-cover shadow-md hover:shadow-xl rounded-lg"
-                    src="/img/aviso1.png"
-                    alt=""
-                  />
-                </div>
-                <div className="">
-                    <div className='flex pb-2'>
-                        <p className=' text-sm'> 
-                            19 Ene 2023
-                            </p>
-                        <button className=' text-xs bg-secondary1 text-white px-3 py-2 rounded-lg ml-5'>
-                            Afiliados
-                            </button>
-                    </div>
-                  <div className="text-lg leading-6 font-medium space-y-1">
-                    <h3 className="font-bold text-gray-800 text-3xl mb-2">
-                      Título Noticia 1
-                    </h3>
-                  </div>
-                  <div className="text-lg">
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad recusandae, consequatur corrupti vel quisquam id itaque
-                      nam
+                    <p className="line-clamp-3">
+                    {noticia.NONovTexto}
                     </p>
                     <div className=' bg-primary1 rounded-lg py-2 px-3 w-24 mt-3 relative float-right
                     hover:bg-primary2
@@ -111,177 +82,8 @@ function News() {
               </a>
             </div>
 
-            <div
-              className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
-            >
-              <a href="#" className="space-y-4">
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="object-cover shadow-md hover:shadow-xl rounded-lg"
-                    src="/img/llamadosfraudulentos1.png"
-                    alt=""
-                  />
-                </div>
-                <div className="">
-                    <div className='flex pb-2'>
-                        <p className=' text-sm'> 
-                            19 Ene 2023
-                            </p>
-                        <button className=' text-xs bg-secondary1 text-white px-3 py-2 rounded-lg ml-5'>
-                            Afiliados
-                            </button>
-                    </div>
-                  <div className="text-lg leading-6 font-medium space-y-1">
-                    <h3 className="font-bold text-gray-800 text-3xl mb-2">
-                      Título Noticia 1
-                    </h3>
-                  </div>
-                  <div className="text-lg">
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad recusandae, consequatur corrupti vel quisquam id itaque
-                      nam
-                    </p>
-                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-24 mt-3 relative float-right
-                    hover:bg-primary2
-                    '>
-                    <p className="font-medium text-sm text-white">
-                      Leer más<span className="text-white">&hellip;</span>
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div
-              className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
-            >
-              <a href="#" className="space-y-4">
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="object-cover shadow-md hover:shadow-xl rounded-lg"
-                    src="/img/enfermero-01.png"
-                    alt=""
-                  />
-                </div>
-                <div className="">
-                    <div className='flex pb-2'>
-                        <p className=' text-sm'> 
-                            19 Ene 2023
-                            </p>
-                        <button className=' text-xs bg-secondary1 text-white px-3 py-2 rounded-lg ml-5'>
-                            Afiliados
-                            </button>
-                    </div>
-                  <div className="text-lg leading-6 font-medium space-y-1">
-                    <h3 className="font-bold text-gray-800 text-3xl mb-2">
-                      Título Noticia 1
-                    </h3>
-                  </div>
-                  <div className="text-lg">
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad recusandae, consequatur corrupti vel quisquam id itaque
-                      nam
-                    </p>
-                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-24 mt-3 relative float-right
-                    hover:bg-primary2
-                    '>
-                    <p className="font-medium text-sm text-white">
-                      Leer más<span className="text-white">&hellip;</span>
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            
-            <div
-              className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
-            >
-              <a href="#" className="space-y-4">
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="object-cover shadow-md hover:shadow-xl rounded-lg"
-                    src="/img/aviso1.png"
-                    alt=""
-                  />
-                </div>
-                <div className="">
-                    <div className='flex pb-2'>
-                        <p className=' text-sm'> 
-                            19 Ene 2023
-                            </p>
-                        <button className=' text-xs bg-secondary1 text-white px-3 py-2 rounded-lg ml-5'>
-                            Afiliados
-                            </button>
-                    </div>
-                  <div className="text-lg leading-6 font-medium space-y-1">
-                    <h3 className="font-bold text-gray-800 text-3xl mb-2">
-                      Título Noticia 1
-                    </h3>
-                  </div>
-                  <div className="text-lg">
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad recusandae, consequatur corrupti vel quisquam id itaque
-                      nam
-                    </p>
-                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-24 mt-3 relative float-right
-                    hover:bg-primary2
-                    '>
-                    <p className="font-medium text-sm text-white">
-                      Leer más<span className="text-white">&hellip;</span>
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div
-              className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
-            >
-              <a href="#" className="space-y-4">
-                <div className="aspect-w-16 aspect-h-9">
-                  <img
-                    className="object-cover shadow-md hover:shadow-xl rounded-lg"
-                    src="/img/llamadosfraudulentos1.png"
-                    alt=""
-                  />
-                </div>
-                <div className="">
-                    <div className='flex pb-2'>
-                        <p className=' text-sm'> 
-                            19 Ene 2023
-                            </p>
-                        <button className=' text-xs bg-secondary1 text-white px-3 py-2 rounded-lg ml-5'>
-                            Afiliados
-                            </button>
-                    </div>
-                  <div className="text-lg leading-6 font-medium space-y-1">
-                    <h3 className="font-bold text-gray-800 text-3xl mb-2">
-                      Título Noticia 1
-                    </h3>
-                  </div>
-                  <div className="text-lg">
-                    <p className="">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Ad recusandae, consequatur corrupti vel quisquam id itaque
-                      nam
-                    </p>
-                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-24 mt-3 relative float-right
-                    hover:bg-primary2
-                    '>
-                    <p className="font-medium text-sm text-white">
-                      Leer más<span className="text-white">&hellip;</span>
-                    </p>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
+          ))
+          }
             
           </div>
         </div>

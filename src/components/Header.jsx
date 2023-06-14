@@ -120,7 +120,7 @@ function Header() {
               </div>
               <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex space-x-5">
+                  <div className="flex xs:space-x-3 lg:space-x-5">
                     <Menu>
                       {navigation.map((item) => (
                         <div>
@@ -132,7 +132,7 @@ function Header() {
                                     item.current
                                       ? "bg-transparent text-primary2 cool-link"
                                       : "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link",
-                                    "mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 inline-flex w-full justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                                    "mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 inline-flex w-full justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                                   )}
                                 >
                                   {item.name}
@@ -197,7 +197,7 @@ function Header() {
                                   item.current
                                     ? "bg-transparent text-primary2 cool-link"
                                     : "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link",
-                                  "mx-1 px-3 py-2 text-sm font-medium transition-all duration-300"
+                                  "mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300"
                                 )}
                                 aria-current={item.current ? "page" : undefined}
                               >
@@ -209,17 +209,17 @@ function Header() {
                         </div>
                       ))}
                       
-                        <div>
+                        <div className="xs:hidden xl:block">
                         <button 
-                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
+                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToPhones : goToHomeAndScrollPhones}
                         >Teléfonos útiles</button>
                         <button 
-                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
+                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToPrev : goToHomeAndScrollPrev}
                         >Prevención</button>
                         <button 
-                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 px-3 py-2 text-sm font-medium transition-all duration-300 uppercase"
+                        className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToNews : goToHomeAndScrollNews}
                         >Noticias</button>
                         </div>
