@@ -3,6 +3,7 @@ import express from "express";
 import ViteExpress from "vite-express";
 import cors from 'cors';
 import nonovedadRoute from './src/routes/nonovedadRoutes.js'
+import internos from './src/routes/noinfutilRoutes.js'
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json())
 
 // Route to get all news
 app.use(nonovedadRoute);
+app.use(internos);
 
 //     // Route to get all news
 // app.get("/novedad/:id", (req,res)=>{

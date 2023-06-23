@@ -25,7 +25,7 @@ function LatestNews() {
         news.map( noticia =>(
           <article key={noticia.NONovID} className="rounded-sm flex max-w-xl flex-col items-start justify-between  bg-white drop-shadow-xl hover:-translate-y-3 duration-300">
             <div className=" w-full">
-                <img className=" h-56 w-full object-cover" src="/img/descarga.jfif" alt="" />
+                <img className=" h-56 w-full object-cover" src={`/img/${noticia.NONovNomImg}`} alt="" />
             </div>
           <div className="pl-5 flex items-center gap-x-4 text-xs mt-2">
             <time dateTime="2020-03-16" className="text-primary2">{moment(noticia.NONovFecha).format("DD MMM YYYY")}</time>

@@ -48,7 +48,7 @@ function News() {
                 <div className="aspect-w-16 aspect-h-9">
                   <img
                     className="object-cover shadow-md hover:shadow-xl rounded-lg"
-                    src="/img/enfermero-01.png"
+                    src={`/img/${noticia.NONovNomImg}`}
                     alt=""
                   />
                 </div>
@@ -70,7 +70,7 @@ function News() {
                     <p className="line-clamp-3">
                     {noticia.NONovTexto}
                     </p>
-                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-24 mt-3 relative float-right
+                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-32 mt-3 relative float-right
                     hover:bg-primary2
                     '>
                     <p className="font-medium text-sm text-white">

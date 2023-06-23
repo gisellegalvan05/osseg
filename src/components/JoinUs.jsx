@@ -4,7 +4,7 @@ function JoinUs() {
   const scroller = Scroll.scroller;
   
   return (
-    <div className="xs:w-4/5 md:w-1/2 ml-auto mr-auto mt-14">
+    <div className="xs:w-4/5 md:w-2/3 ml-auto mr-auto mt-14">
       <div>
         <p className="text-4xl font-bold text-secondary2 py-5">Afiliaciones</p>
         <p className=" py-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tenetur consequuntur perferendis dolor quasi. Rerum repellat est voluptates suscipit, deserunt veniam nihil optio ullam, nulla, dolorum voluptas. Aspernatur, molestiae veritatis?</p>
