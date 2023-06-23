@@ -70,7 +70,7 @@ function News() {
                     <p className="line-clamp-3">
                     {noticia.NONovTexto}
                     </p>
-                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-32 mt-3 relative float-right
+                    <div className=' bg-primary1 rounded-lg py-2 px-3 w-28 mt-3 relative float-right
                     hover:bg-primary2
                     '>
                     <p className="font-medium text-sm text-white">
