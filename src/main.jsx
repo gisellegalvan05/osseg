@@ -6,6 +6,8 @@ import Home from './pages/Home'
 import Nosotros from './pages/Nosotros'
 import Afiliarse from './pages/Afiliarse'
 import Sedes from './pages/Sedes'
+import Noticias from './pages/Noticias'
+import UnaNoticia from './pages/UnaNoticia'
 import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import 'flowbite'
 
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       {
         path:'/delegaciones',
         element: <Sedes />
+      },
+      {
+        path:'/noticias',
+        element: <Noticias />
+      },
+      {
+        path:'/novedades/:NONovID',
+        element: <UnaNoticia />
       },
     ]
   },

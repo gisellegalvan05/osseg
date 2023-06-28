@@ -26,14 +26,12 @@ function News() {
       <div className="mx-auto w-full md:w-4/5 px-4">
         <div className="md:container my-8">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-3xl font-medium">
-              <a href="#" className=""
+              <a href="/noticias" className=" float-right"
                 ><span
-                  className=" bg-opacity-40 bg-primary2 hover:text-white text-primary2 rounded-xl py-3 px-5 font-medium text-lg"
-                  >Ver todo...
-                </span></a
-              >
-            </h2>
+                  className="hover:text-primary1 text-primary2 font-medium text-base"
+                  >Ver más noticias →
+                </span>
+                </a>
           </div>
           <div
             id="scrollContainer"
@@ -45,7 +43,7 @@ function News() {
               className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
             >
               <a href="#" className="space-y-4">
-                <div className="aspect-w-16 aspect-h-9">
+                <div className="aspect-w-16 aspect-h-9 max-h-64">
                   <img
                     className="object-cover shadow-md hover:shadow-xl rounded-lg"
                     src={`/img/${noticia.NONovNomImg}`}

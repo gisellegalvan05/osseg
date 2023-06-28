@@ -52,7 +52,16 @@ function classNames(...classes) {
             Programas Preventivos
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-100r overflow-hidden">
+        
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-16 lg:max-w-100r overflow-hidden">
+        <div className="mb-4 pl-8">
+              <a href="#" className=""
+                ><span
+                  className="hover:text-primary1 text-primary2 font-medium text-base"
+                  >Ver más Programas preventivos →
+                </span>
+                </a>
+          </div>
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
             <div ref={imgRef} id="columnA">
               <div className="relative pl-8">

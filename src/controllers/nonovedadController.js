@@ -1,5 +1,7 @@
 import db from '../../config/db.js';
 
+const today = new Date();
+
 export const novedades = (req,res)=>{
     db.query("SELECT * FROM nonovedad WHERE NONovTipo='D'", (err,result)=>{
         if(err) {
@@ -9,7 +11,10 @@ export const novedades = (req,res)=>{
     });   }
 
 export const novedad = (req,res)=>{
-    db.query("SELECT * FROM nonovedad", (err,result)=>{
+
+    const NONovID = req.body.NONovID;
+
+    db.query("SELECT * FROM nonovedad where NONovID = ?", [NONovID], (err,result)=>{
         if(err) {
         console.log(err)
         } 
@@ -25,7 +30,7 @@ export const noticiasTop = (req,res)=>{
         });   }
 
 export const noticiasAll = (req,res)=>{
-    db.query("SELECT * FROM nonovedad WHERE NONovTipo='N' ORDER BY NONovFecha DESC", (err,result)=>{
+    db.query("SELECT * FROM nonovedad ORDER BY NONovTipo, NONovFecha DESC", (err,result)=>{
         if(err) {
         console.log(err)
         } 

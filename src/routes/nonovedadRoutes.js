@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/novedades", novedades);
 
-router.get("/novedades/:id", novedad);
+router.get("/novedades/:NONovID", novedad);
 
 router.get("/noticiasTop", noticiasTop);
 
