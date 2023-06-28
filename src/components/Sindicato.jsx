@@ -18,9 +18,9 @@ function Sindicato() {
               </p>
             </div>
             <div className="self-center md:left-1/4 relative xs:top-6 md:top-0">
-              <button className="bg-contrast py-2 px-9 text-white text-lg rounded-lg hover:bg-contrast1-600">
+              <a href="https://www.sindicatodelseguro.com.ar/" target="_blank" className="bg-contrast py-2 px-9 text-white text-lg rounded-lg hover:bg-contrast1-600">
                 Ir al Sitio
-              </button>
+              </a>
             </div>
           </div>
       </div>

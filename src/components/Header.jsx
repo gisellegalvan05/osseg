@@ -229,7 +229,7 @@ function Header() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a className="text-white bg-primary1 hover:bg-primary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer">
+                <a href="#" className="text-white bg-primary1 hover:bg-primary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer">
                   Ingresar
                 </a>
               </div>
