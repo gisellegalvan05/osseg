@@ -1,6 +1,7 @@
 import OneNews from "../components/OneNews"
 
-function UnaNoticia() {
+function UnaNoticia({noticiaId}) {
+
   return (
     <>
     <OneNews/>

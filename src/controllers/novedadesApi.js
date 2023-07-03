@@ -1,13 +1,23 @@
 import axios from "axios";
 
-export const getNewsRequest = async (news) =>
-   await axios.get('http://localhost:3000/novedades', news)
+const mapsConfig = {
+   apiKey: import.meta.env.VITE_FRONTEND_URL,
+ }
 
-export const getOneNewRequest = async (oneNews) =>
-await axios.get('http://localhost:3000/novedades/:id', oneNews)
+export const getNewsRequest = async (news) =>
+   await axios.get(`${mapsConfig.apiKey}/novedades`, news)
+
+export const getOneNewRequest = async (id) =>
+   await axios.get(`${mapsConfig.apiKey}/novedad/${id}`)
 
 export const getNewsTopRequest = async (newsTop) =>
-   await axios.get('http://localhost:3000/noticiasTop', newsTop)
+   await axios.get(`${mapsConfig.apiKey}/noticiasTop`, newsTop)
 
 export const getNewsAllRequest = async (newsAll) =>
-   await axios.get('http://localhost:3000/noticiasAll', newsAll)
+   await axios.get(`${mapsConfig.apiKey}/noticiasAll`, newsAll)
+
+  export const getPrevAllRequest = async (prevAll) =>
+   await axios.get(`${mapsConfig.apiKey}/prevencionAll`, prevAll)
+
+export const getPrevTopRequest = async (prevTop) =>
+   await axios.get(`${mapsConfig.apiKey}/prevencionTop`, prevTop)

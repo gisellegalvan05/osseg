@@ -42,7 +42,7 @@ function News() {
             <div key={noticia.NONovID}
               className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
             >
-              <a href="#" className="space-y-4">
+              <div className="space-y-4">
                 <div className="aspect-w-16 aspect-h-9 max-h-64">
                   <img
                     className="object-cover shadow-md hover:shadow-xl rounded-lg"
@@ -71,13 +71,15 @@ function News() {
                     <div className=' bg-primary1 rounded-lg py-2 px-3 w-28 mt-3 relative float-right
                     hover:bg-primary2
                     '>
+                      <a href={'/noticias/'+noticia.NONovID}>
                     <p className="font-medium text-sm text-white">
                       Leer más<span className="text-white">&hellip;</span>
                     </p>
+                    </a>
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
 
           ))

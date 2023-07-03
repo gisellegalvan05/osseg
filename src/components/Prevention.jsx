@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { getPrevTopRequest } from '../controllers/novedadesApi';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as Scroll from 'react-scroll';
@@ -43,6 +44,16 @@ function classNames(...classes) {
 
   // }, []);
 
+  const [prev, setPrev] = useState([])
+
+  useEffect( ()=>{
+   async function loadPrevention(){
+    const response = await  getPrevTopRequest()
+    setPrev(response.data)
+    }
+    loadPrevention()
+  },[]);
+
    return (
     <Element name = "prev">
     <div className="bg-soft lg:py-10 sm:py-32 xs:pt-0 xs:pb-16 relative flex">
@@ -55,7 +66,7 @@ function classNames(...classes) {
         
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-16 lg:max-w-100r overflow-hidden">
         <div className="mb-4 pl-8">
-              <a href="#" className=""
+              <a href="/prevencion" className=""
                 ><span
                   className="hover:text-primary1 text-primary2 font-medium text-base"
                   >Ver más Programas preventivos →
@@ -76,87 +87,37 @@ function classNames(...classes) {
             </div>
           
             <div ref={block} id="columnB">
-              <div className="flex relative mt-3 mb-16 bg-white pl-3 pr-6 py-6 rounded-xl drop-shadow-xl hover:-translate-y-3 duration-200">
-                <div className=" w-1/5 my-auto mt-auto flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="#009A96"
-                    className="w-20 h-20"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                    />
-                  </svg>
-                </div>
-                <div className=" w-4/5">
-                  <dt className="text-xl font-bold leading-7 text-gray-900">
-                    Dengue
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
-                    Sit quis amet rutrum tellus ullamcorper ultricies libero
-                    dolor eget. Sem sodales gravida quam turpis enim lacus amet.
-                  </dd>
-                </div>
-              </div>
-              <div className="flex relative mt-3 mb-16 bg-white pl-3 pr-6 py-6 rounded-xl drop-shadow-xl hover:-translate-y-3 duration-200">
-                <div className=" w-1/5 my-auto mt-auto flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="#009A96"
-                    className="w-20 h-20"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                    />
-                  </svg>
-                </div>
-                <div className=" w-4/5">
-                  <dt className="text-xl font-bold leading-7 text-gray-900">
-                    Dengue
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
-                    Sit quis amet rutrum tellus ullamcorper ultricies libero
-                    dolor eget. Sem sodales gravida quam turpis enim lacus amet.
-                  </dd>
-                </div>
-              </div>
-              <div className="flex relative mt-3 mb-16 bg-white pl-3 pr-6 py-6 rounded-xl drop-shadow-xl hover:-translate-y-3 duration-200">
-                <div className=" w-1/5 my-auto mt-auto flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="2"
-                    stroke="#009A96"
-                    className="w-20 h-20"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                    />
-                  </svg>
-                </div>
-                <div className=" w-4/5">
-                  <dt className="text-xl font-bold leading-7 text-gray-900">
-                    Dengue
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
-                    Sit quis amet rutrum tellus ullamcorper ultricies libero
-                    dolor eget. Sem sodales gravida quam turpis enim lacus amet.
-                  </dd>
-                </div>
-              </div>
+            {
+              prev.map( programa =>(
+                <a key={programa.NONovID} href={'/prevencion/'+programa.NONovID}>
+                <div className="flex relative mt-3 mb-16 bg-white pl-3 pr-6 py-6 rounded-xl drop-shadow-xl hover:-translate-y-3 duration-200">                  
+                    <div className=" w-1/5 my-auto mt-auto flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="2"
+                        stroke="#009A96"
+                        className="w-20 h-20"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+                        />
+                      </svg>
+                    </div>
+                    <div className=" w-4/5">
+                      <dt className="text-xl font-bold leading-7 text-gray-900">
+                      {programa.NONovDescripcion}
+                      </dt>
+                      <dd className="line-clamp-2 mt-2 text-base leading-7 text-gray-600">
+                      {programa.NONovTexto}
+                      </dd>
+                    </div>
+                  </div>
+                  </a>
+              ))}
             </div>
           </dl>
         </div>

@@ -8,6 +8,8 @@ import Afiliarse from './pages/Afiliarse'
 import Sedes from './pages/Sedes'
 import Noticias from './pages/Noticias'
 import UnaNoticia from './pages/UnaNoticia'
+import OneNews from './components/OneNews'
+import ProgramasPreventivos from './pages/ProgramasPreventivos'
 import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import 'flowbite'
 
@@ -38,7 +40,15 @@ const router = createBrowserRouter([
         element: <Noticias />
       },
       {
-        path:'/novedades/:NONovID',
+        path:'/noticias/:id',
+        element: <UnaNoticia />
+      },
+      {
+        path:'/prevencion',
+        element: <ProgramasPreventivos />
+      },
+      {
+        path:'/prevencion/:id',
         element: <UnaNoticia />
       },
     ]

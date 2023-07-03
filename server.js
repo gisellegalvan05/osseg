@@ -14,6 +14,8 @@ app.use(express.json())
 app.use(nonovedadRoute);
 app.use(internos);
 
+//const PORT = process.env.PORT || 3000;
+
 //     // Route to get all news
 // app.get("/novedad/:id", (req,res)=>{
 //     db.query("SELECT * FROM nonovedad WHERE NONovID=id", (err,result)=>{

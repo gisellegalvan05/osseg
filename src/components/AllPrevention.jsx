@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { getNewsAllRequest } from "../controllers/novedadesApi";
+import { getPrevAllRequest } from "../controllers/novedadesApi";
 import moment from "moment/moment";
 
-function AllNews() {
-  const [news, setNews] = useState([]);
+function AllPrevention() {
+
+const [news, setNews] = useState([]);
 
   useEffect(() => {
     async function loadNews() {
-      const response = await getNewsAllRequest();
+      const response = await getPrevAllRequest();
       setNews(response.data);
     }
     loadNews();
@@ -15,16 +16,16 @@ function AllNews() {
 
   return (
     <>
-      <div className="bg-white lg:py-24 sm:py-32">
+    <div className="bg-white lg:py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-              Noticias
+              Programas Preventivos
             </h2>
           </div>
           <div className="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-12 sm:pt-14 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             {news.map((noticia) => (
-              <a key= {noticia.NONovID} href={'/noticias/'+noticia.NONovID}>
+              <a key= {noticia.NONovID} href={'/prevencion/'+noticia.NONovID}>
               <article
                 className="flex max-w-xl flex-col items-start justify-between"
                 key={noticia.NONovID}
@@ -56,7 +57,7 @@ function AllNews() {
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default AllNews;
+export default AllPrevention
