@@ -7,6 +7,7 @@ import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 
 function Banner() {
     SwiperCore.use([Autoplay]);
@@ -14,9 +15,10 @@ function Banner() {
     <>
     <div className="relative h-30r overflow-hidden">
 <Swiper
-      modules={[Navigation, Pagination]}
+      modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={0}
       slidesPerView={1}
+      autoplay={true}
       navigation
     >
         
