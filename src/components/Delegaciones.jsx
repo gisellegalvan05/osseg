@@ -1,43 +1,62 @@
-const sedes = [
-    {
-      name: 'OSSEG SEDE CENTRAL C. PELLEGRINI',
-      address: 'CARLOS PELLEGRINI 575 BUENOS AIRES',
-      phone: '4131 2000',
-      email: 'informacion@osseg.org.ar',
-    },
-    {
-        name: 'OSSEG DELEGACIÓN LOMAS DE ZAMORA',
-        address: 'MANUEL CASTRO 390',
-        phone: '4292-4257',
-        email: 'lomasdezamora@osseg.org.ar',
-    },
-    {
-        name: 'OSSEG DELEGACIÓN MORÓN',
-        address: '9 DE JULIO 520',
-        phone: '4627-6749',
-        email: 'moron@osseg.org.ar',
-    },
-    {
-        name: 'OSSEG DELEGACIÓN QUILMES',
-        address: 'TUCUMÁN 415',
-        phone: '4254-0268',
-        email: 'iquilmes@osseg.org.ar',
-    },
-    {
-        name: 'OSSEG DELEGACIÓN SAN ISIDRO',
-        address: 'RIVADAVIA 670',
-        phone: '4732-4882',
-        email: 'sanisidro@osseg.org.ar',
-    },
-    {
-        name: 'OSSEG DELEGACIÓN SAN MARTIN',
-        address: 'MATHEU 3515',
-        phone: '4753-8114 | 5187-7501',
-        email: 'sanmartin@osseg.org.ar',
-    },
-  ]
+import { Loader } from "@googlemaps/js-api-loader"
+import { getDireccionesRequest } from '../controllers/infUtilApi';
+import { useState, useEffect } from 'react';
+
+const mapsApiKey = {
+  mapsKey: import.meta.env.VITE_MAPS_API_KEY,
+}
+
+const loader = new Loader({
+  apiKey: `${mapsApiKey.mapsKey}`,
+  version: "weekly",
+});
 
 function Delegaciones() {
+
+  const [sedes, setSedes] = useState([])
+
+  useEffect( ()=>{
+   async function loadSedes(){
+    const response = await  getDireccionesRequest()
+    setSedes(response.data)
+    }
+    loadSedes()
+  },[]);
+
+  loader.load().then(async () => {
+    const { Map } = await google.maps.importLibrary("maps");
+    
+    let myLatlng = new google.maps.LatLng(-34.75562973721628,-58.40326811596806);
+
+    const myMap = new Map(document.getElementById("map"), {
+      center: myLatlng,
+      zoom: 10,
+    });
+
+    sedes.map((sede) => {
+      
+      const lat = sede.NOInfGeolocation.substring(0,sede.NOInfGeolocation.indexOf(','))
+      const long = sede.NOInfGeolocation.substring(sede.NOInfGeolocation.indexOf(',')+1)
+
+      let myPosition = new google.maps.LatLng(lat,long);
+
+      const marker = new google.maps.Marker({
+        position: myPosition,
+        title:sede.NOInfDescripcion,
+        map:myMap
+    })
+  });
+
+  });
+
+  function RefreshMap(geoPos){
+    const lat = geoPos.substring(0,geoPos.indexOf(','))
+    const long = geoPos.substring(geoPos.indexOf(',')+1)
+    const myPosition = new google.maps.LatLng(lat,long)
+
+    //MyMap.setCenter(groPos)
+  }
+
   return (
     <>
     <div className=" bg-primary4 lg:py-10 sm:py-32">
@@ -52,22 +71,24 @@ function Delegaciones() {
             <div id="scrollContainer" className=' ml-auto mr-auto pr-5 h-96 overflow-y-scroll flex flex-no-wrap scrolling-touch items-start mb-8 scrollbar'>
                 <ul role="list" className="divide-y divide-gray-100">
         {sedes.map((sede) => (
-            <li key={sede.email} className="flex justify-between gap-x-6 py-2">
+            <a key={sede.NOInfUtilID} onClick={() =>RefreshMap(sede.NOInfGeolocation)}>
+            <li  className="flex justify-between gap-x-6 py-2">
             <div className="flex gap-x-4 bg-white rounded-md w-96 px-10 py-5">
                 <div className="min-w-0 flex-auto">
-                <p className="text-sm font-semibold leading-6 text-gray-900">{sede.name}</p>
-                <p className="text-sm leading-6 text-gray-900">{sede.address}</p>
-                <p className="text-sm leading-6 text-gray-900">{sede.phone}</p>
-                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{sede.email}</p>
+                <p className="text-sm font-semibold leading-6 text-gray-900">{sede.NOInfDescripcion}</p>
+                <p className="text-sm leading-6 text-gray-900">{sede.NOInflDireccion}</p>
+                <p className="text-sm leading-6 text-gray-900">{sede.NOInfTelefono}</p>
+                <p className="mt-1 truncate text-xs leading-5 text-gray-500">{sede.NOInfLink}</p>
                 </div>
             </div>
             </li>
+            </a>
         ))}
         </ul>
             </div>
           
-            <div id="columnB">
-              <img src="./img/Screenshot_16.png" alt="" className='h-96'/>
+            <div id="map">
+              
             </div>
           </dl>
         </div>
