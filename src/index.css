@@ -87,3 +87,27 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.changeBtn{
+  display: inline-block;
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 150px;
+  text-align: center;
+  min-height: 36px;
+  transition: all 600ms;
+}
+
+.changeBtn:hover span {
+  display:none
+}
+
+.changeBtn:hover:after{
+  content: "INGRESAR";
+  position: absolute;
+  text-align: center;
+  left:2.5rem;
+}

@@ -1,6 +1,7 @@
 import { Loader } from "@googlemaps/js-api-loader"
 import { getDireccionesRequest } from '../controllers/infUtilApi';
 import { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 
 const mapsApiKey = {
   mapsKey: import.meta.env.VITE_MAPS_API_KEY,
@@ -13,12 +14,14 @@ const loader = new Loader({
 
 function Delegaciones() {
 
+  const params = useParams();
   const [sedes, setSedes] = useState([])
 
   useEffect( ()=>{
    async function loadSedes(){
-    const response = await  getDireccionesRequest()
+    const response = await  getDireccionesRequest(params.id)
     setSedes(response.data)
+    console.log('llega')
     }
     loadSedes()
   },[]);

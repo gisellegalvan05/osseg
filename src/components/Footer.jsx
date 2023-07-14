@@ -5,123 +5,36 @@ function Footer() {
   <div
     className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
   >
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
       <div>
         <div className="text-teal-600 dark:text-teal-300">
-          <img src="/img/osseg.png" alt="" />
+          <img className = " w-40" src="/img/osseg.png" alt="" />
         </div>
       </div>
-
-      <div
-        className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4"
-      >
-        <div>
-          <p className="font-medium text-white dark:text-white">Servicios</p>
-
-          <nav aria-label="Footer Navigation - Services" className="mt-6">
-            <ul className="space-y-4 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
-                >
-                  Políticas de privacidad
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
-                >
-                 Defensa del Consumidor 
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
-                >
-                  Baja de servicio-Arrepentimiento
-                </a>
-              </li>
-            </ul>
-          </nav>
+      <div>
+          <p className="font-normal leading-7 text-white dark:text-white">Carlos Pellegrini 575 (C1009ABK), CABA</p>
+          <p className="font-normal leading-7 text-white dark:text-white">Teléfonos: 0800-777-67734 / 4131-2100</p>
+          <img className="mt-14" src="/img/qr.png" alt="" />
+          
         </div>
 
         <div>
-          <p className="font-medium text-white dark:text-white">Información de contacto</p>
+          <p className="font-normal leading-7 text-white dark:text-white">Superintendencia de Servicios de Salud</p>
+          <p className="font-normal leading-7 text-white dark:text-white">Órgano de control de obras sociales y entidades de medicina prepaga</p>
+          <p className="font-normal leading-7 text-white dark:text-white">0800 222 SALUD (72583)</p>
+          <p className="font-normal leading-7 text-white dark:text-white">info@sssalud.gob.ar</p>
+          <p className="font-normal leading-7 text-white dark:text-white"><a className="hover:underline" href="www.sssalud.gob.ar">www.sssalud.gob.ar</a></p>
+          <p className="font-normal leading-7 text-white dark:text-white">R.N.O.S. N° 0-0090-1</p>
 
-          <nav aria-label="Footer Navigation - Company" className="mt-6">
-            <ul className="space-y-4 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
-                >
-                  Carlos Pellegrini 575 CABA
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
-                >
-                  0800-777-67734   4131-2100
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
-                >
-                  informacion@osseg.org.ar
-                </a>
-              </li>
-            </ul>
-          </nav>
         </div>
 
         <div>
-          <p className="font-medium text-white dark:text-white">Superintendencia de Servicios de Salud</p>
-
-          <nav aria-label="Footer Navigation - Company" className="mt-6">
-            <ul className="space-y-4 text-sm">
-              <li>
-                <p className="text-white transition hover:opacity-75 mb-5">
-                  Órgano de control de obras sociales y entidades de medicina prepaga
-                </p>
-                <p className="text-white transition hover:opacity-75 mb-3">
-                0800 222 SALUD (72583)
-                </p>
-                <p className="text-white transition hover:opacity-75 mb-3">
-                info@sssalud.gob.ar
-                </p>
-                <p className="text-white transition hover:opacity-75 mb-3">
-                www.sssalud.gob.ar
-                </p>
-                <p className="text-white transition hover:opacity-75">
-                R.N.O.S. N° 0-0090-1 
-
-                </p>
-              </li>
-
-            </ul>
-          </nav>
-        </div>
-
-        <div>
-          <p className="font-medium text-white dark:text-white">Enlaces de interés</p>
-
-          <nav aria-label="Footer Navigation - Services" className="mt-6">
+          <nav aria-label="Footer Navigation - Services" className="leading-7">
             <ul className="space-y-4 text-sm">
               <li>
                 <a
                   href="www.sindicatodelseguro.com.ar"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
+                  className="font-normal leading-7 text-white transition hover:underline dark:text-gray-200"
                 >
                   SINDICATO DEL SEGURO
                 </a>
@@ -130,7 +43,7 @@ function Footer() {
               <li>
                 <a
                   href="www.amtras.org.ar"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
+                  className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                  ASOCIACION MUTUAL DE TRABAJADORES DE SEGUROS - AMTRAS
                 </a>
@@ -139,7 +52,7 @@ function Footer() {
               <li>
                 <a
                   href="www.sssalud.gob.ar"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
+                  className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                   SUPERINTENDENCIA DE SERVICIOS DE SALUD
                 </a>
@@ -147,19 +60,26 @@ function Footer() {
               <li>
                 <a
                   href="www.sssalud.gob.ar"
-                  className="text-white transition hover:opacity-75 dark:text-gray-200"
+                  className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                   Cobertura Opción Osseg Res. SSSsalud 1793/20
+                </a>
+              </li>
+              <li>
+                <a
+                  href="personal@osseg.org.ar"
+                  className="font-normal text-white transition hover:underline dark:text-gray-200"
+                >
+                  ¿Querés trabrajar con nosotros?
                 </a>
               </li>
             </ul>
           </nav>
         </div>
-      </div>
     </div>
 
     <p className=" text-center text-xs text-white dark:text-gray-400">
-      &copy; 2022. OSSEG. Todos los derechos reservados.
+      &copy; 2023. OSSEG. Todos los derechos reservados.
     </p>
   </div>
 </footer>

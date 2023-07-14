@@ -11,7 +11,6 @@ function OneNews({ noticiaId }) {
     async function loadNews() {
       const response = await getOneNewRequest(params.id);
       setNews(response.data);
-      console.log(response.data);
     }
     loadNews();
   }, []);

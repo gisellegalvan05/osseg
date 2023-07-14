@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get("/internos", internos);
 
-router.get("/direcciones", direcciones);
+router.get("/direcciones/:id", direcciones);
 
     export default router;

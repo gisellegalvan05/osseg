@@ -9,9 +9,13 @@ export const internos = (req,res)=>{
     });   }
 
 export const direcciones = (req,res)=>{
-    db.query("SELECT * FROM noinfutil WHERE NOInfTipo='D' ", (err,result)=>{
+
+    const Provincia = req.params.id;
+    console.log('Provincia '+Provincia)
+    db.query("SELECT * FROM noinfutil WHERE NOInfTipo='D' AND NOInfUtilProv = ?",[Provincia], (err,result)=>{
         if(err) {
         console.log(err)
         } 
     res.send(result)
-    });   }
+    });   
+}

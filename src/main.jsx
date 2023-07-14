@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <Afiliarse />
       },
       {
-        path:'/delegaciones',
+        path:'/delegaciones/:id',
         element: <Sedes />
       },
       {

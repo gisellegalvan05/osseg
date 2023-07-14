@@ -9,7 +9,7 @@ const navigation = [
   { key: "index", name: "INICIO", href: "/", current: true },
   { key: "aboutus", name: "SOBRE NOSOTROS", href: "/nosotros", current: false },
   { key: "join", name: "QUIERO AFILIARME", href: "/afiliarse", current: false },
-  { key: "sites", name: "DELEGACIONES", href: "/delegaciones", current: false },
+  { key: "sites", name: "DELEGACIONES", href: "/delegaciones/0", current: false },
 //  { key: "news", name: "NOTICIAS", href: "#", current: false },
 //  { key: "phones", name: "TELÉFONOS ÚTILES", href: "#usefulNum", current: false},
 //  { key: "prev", name: "PREVENCIÓN", href: "#", current: false },
@@ -120,7 +120,7 @@ function Header() {
               </div>
               <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="hidden sm:ml-6 sm:block">
-                  <div className="flex xs:space-x-3 lg:space-x-5">
+                  <div className="flex xs:space-x-2 lg:space-x-2">
                     <Menu>
                       {navigation.map((item) => (
                         <div key={item.key}>
@@ -214,10 +214,10 @@ function Header() {
                         className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToPhones : goToHomeAndScrollPhones}
                         >Teléfonos útiles</button>
-                        <button 
+                        {/* <button 
                         className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToPrev : goToHomeAndScrollPrev}
-                        >Prevención</button>
+                        >Prevención</button> */}
                         <button 
                         className = "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 uppercase"
                         onClick={location === 'home' ? scrollToNews : goToHomeAndScrollNews}
@@ -229,8 +229,11 @@ function Header() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a href="#" className="text-white bg-primary1 hover:bg-primary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer">
-                  Ingresar
+                <a href="#" className="changeBtn text-white bg-primary1 hover:bg-primary2 rounded-md px-6 py-2 mr-5 text-sm font-medium uppercase hover:cursor-pointer">
+                  <span>Afiliados</span>
+                </a>
+                <a href="#" className="changeBtn text-white bg-secondary1 hover:bg-secondary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer">
+                <span>Prestadores</span>
                 </a>
               </div>
             </div>
