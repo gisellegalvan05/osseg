@@ -77,5 +77,5 @@ export default {
       },
     },
   },
-  plugins: [require("./node_modules/tw-elements/dist/plugin.cjs"), require('@tailwindcss/forms'),require('flowbite/plugin')],
+  plugins: [require("./node_modules/tw-elements/dist/plugin.cjs"), require('@tailwindcss/forms'),require('flowbite/plugin'),require('@headlessui/tailwindcss')],
 }

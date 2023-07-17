@@ -33,7 +33,7 @@ function Footer() {
             <ul className="space-y-4 text-sm">
               <li>
                 <a
-                  href="www.sindicatodelseguro.com.ar"
+                  href="www.sindicatodelseguro.com.ar" target="_blank"
                   className="font-normal leading-7 text-white transition hover:underline dark:text-gray-200"
                 >
                   SINDICATO DEL SEGURO
@@ -42,7 +42,7 @@ function Footer() {
 
               <li>
                 <a
-                  href="www.amtras.org.ar"
+                  href="www.amtras.org.ar" target="_blank"
                   className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                  ASOCIACION MUTUAL DE TRABAJADORES DE SEGUROS - AMTRAS
@@ -51,7 +51,7 @@ function Footer() {
 
               <li>
                 <a
-                  href="www.sssalud.gob.ar"
+                  href="www.sssalud.gob.ar" target="_blank"
                   className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                   SUPERINTENDENCIA DE SERVICIOS DE SALUD
@@ -59,7 +59,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="www.sssalud.gob.ar"
+                  href="/files/CARTILLA2023.pdf" target="_blank"
                   className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                   Cobertura Opción Osseg Res. SSSsalud 1793/20
@@ -67,7 +67,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="personal@osseg.org.ar"
+                  href="personal@osseg.org.ar" 
                   className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                   ¿Querés trabrajar con nosotros?

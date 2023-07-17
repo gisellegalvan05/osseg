@@ -11,8 +11,7 @@ export const internos = (req,res)=>{
 export const direcciones = (req,res)=>{
 
     const Provincia = req.params.id;
-    console.log('Provincia '+Provincia)
-    db.query("SELECT * FROM noinfutil WHERE NOInfTipo='D' AND NOInfUtilProv = ?",[Provincia], (err,result)=>{
+    db.query("SELECT * FROM noinfutil WHERE NOInfTipo='D' AND ((NOInfUtilProv=?) OR (?=0))",[Provincia,Provincia], (err,result)=>{
         if(err) {
         console.log(err)
         } 

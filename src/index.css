@@ -98,7 +98,7 @@ html, body {
   width: 150px;
   text-align: center;
   min-height: 36px;
-  transition: all 600ms;
+  transition: all 1000ms;
 }
 
 .changeBtn:hover span {
@@ -106,6 +106,7 @@ html, body {
 }
 
 .changeBtn:hover:after{
+  transition: all 1000ms;
   content: "INGRESAR";
   position: absolute;
   text-align: center;
