@@ -41,6 +41,9 @@ export default {
     },
     },
     extend: {
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+    },
       maxWidth: {
         '100r': '100rem',
       },

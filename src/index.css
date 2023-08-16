@@ -112,3 +112,13 @@ html, body {
   text-align: center;
   left:2.5rem;
 }
+
+.map-container{
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  height: 50vh;
+  width: 50vw;
+}
