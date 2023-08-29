@@ -67,15 +67,15 @@ function Delegaciones() {
   return (
     <>
     <div className=" bg-primary4 lg:py-10 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-full px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <p className="mt-2 text-3xl font-bold tracking-tight text-secondary2 sm:text-4xl">
             Delegaciones
           </p>
         </div>
         <div className="mx-auto max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-100r overflow-hidden">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-            <div id="scrollContainer" className=' ml-auto mr-auto pr-5 h-96 overflow-y-scroll scrolling-touch items-start mb-8 scrollbar'>
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+            <div id="scrollContainer" className=' ml-auto mr-auto pr-5 h-30r overflow-y-scroll scrolling-touch items-start mb-8 scrollbar'>
             <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
         <>
@@ -157,10 +157,9 @@ function Delegaciones() {
         </ul>
             </div>
           
-            <div id="map2">
+            <div id="map2" className=" col-span-2">
     
             </div>
-            <MapApp myCenter={'xxxxxxx'} myZoom={7}></MapApp>
           </dl>
         </div>
       </div>  

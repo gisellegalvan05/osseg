@@ -9,6 +9,7 @@ import Sedes from './pages/Sedes'
 import Noticias from './pages/Noticias'
 import UnaNoticia from './pages/UnaNoticia'
 import ProgramasPreventivos from './pages/ProgramasPreventivos'
+import MoreNums from './pages/MoreNums'
 import { createBrowserRouter, RouterProvider} from "react-router-dom"
 import 'flowbite'
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path:'/prevencion/:id',
         element: <UnaNoticia />
+      },
+      {
+        path:'/masnumeros',
+        element: <MoreNums />
       },
     ]
   },

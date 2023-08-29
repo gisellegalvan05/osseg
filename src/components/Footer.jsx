@@ -19,7 +19,7 @@ function Footer() {
         </div>
 
         <div>
-          <p className="font-normal leading-7 text-white dark:text-white">Superintendencia de Servicios de Salud</p>
+          <a href="www.sssalud.gob.ar" target="_blank" className="font-normal leading-7 text-white dark:text-white hover:underline">Superintendencia de Servicios de Salud</a>
           <p className="font-normal leading-7 text-white dark:text-white">Órgano de control de obras sociales y entidades de medicina prepaga</p>
           <p className="font-normal leading-7 text-white dark:text-white">0800 222 SALUD (72583)</p>
           <p className="font-normal leading-7 text-white dark:text-white">info@sssalud.gob.ar</p>
@@ -46,15 +46,6 @@ function Footer() {
                   className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                  ASOCIACION MUTUAL DE TRABAJADORES DE SEGUROS - AMTRAS
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="www.sssalud.gob.ar" target="_blank"
-                  className="font-normal text-white transition hover:underline dark:text-gray-200"
-                >
-                  SUPERINTENDENCIA DE SERVICIOS DE SALUD
                 </a>
               </li>
               <li>
