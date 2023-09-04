@@ -45,7 +45,7 @@ function News() {
               <div className="space-y-4">
                 <div className=" min-w-full max-h-64">
                   <img
-                    className="object-cover shadow-md hover:shadow-xl rounded-lg"
+                    className="object-cover shadow-md hover:shadow-xl rounded-lg h-64 w-96"
                     src={`/img/${noticia.NONovNomImg}`}
                     alt=""
                   />
