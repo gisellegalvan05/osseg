@@ -13,7 +13,7 @@ function Banner() {
     SwiperCore.use([Autoplay]);
   return (
     <>
-    <div className="relative h-96 overflow-hidden">
+    <div className="relative h-30r overflow-hidden">
 <Swiper
       modules={[Navigation, Pagination, Autoplay]}
       spaceBetween={0}
