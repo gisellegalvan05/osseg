@@ -23,7 +23,7 @@ function OneNews({ noticiaId }) {
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none lg:items-start">
         <div className=" text-center -ml-12 -mt-12 p-12 lg:top-4 lg:overflow-hidden">
             <img
-              className=" mx-auto w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[48rem]"
+              className=" mx-auto w-[48rem] max-w-none rounded-xl bg-gray-900 ring-1 ring-gray-400/10 sm:w-[48rem]"
               src={`/img/${noticia.NONovNomImg}`}
               
               alt=""
@@ -39,7 +39,7 @@ function OneNews({ noticiaId }) {
                   {news[0].NONovDescripcion}
                 </h1>
                 <p className="mt-6 text-xl leading-8 text-gray-700">
-                  {news[0].NONovTexto}
+                <div dangerouslySetInnerHTML={{__html:news[0].NONovTexto}}></div>
                 </p>
               </div>
             </div>

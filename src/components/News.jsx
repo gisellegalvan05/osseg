@@ -66,7 +66,7 @@ function News() {
                   </div>
                   <div className="text-lg">
                     <p className="line-clamp-3">
-                    {noticia.NONovTexto}
+                    <div dangerouslySetInnerHTML={{__html:noticia.NONovTexto}}></div>
                     </p>
                     <div className=' bg-primary1 rounded-lg py-2 px-3 w-28 mt-3 relative float-right
                     hover:bg-primary2

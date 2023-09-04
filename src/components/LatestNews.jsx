@@ -35,7 +35,7 @@ function LatestNews() {
             <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary2">
                 {noticia.NONovDescripcion}
             </h3>
-            <p className="mt-4 line-clamp-3 text-sm leading-6 text-gray-700">{noticia.NONovTexto}</p>
+            <p className="mt-4 line-clamp-3 text-sm leading-6 text-gray-700"><div dangerouslySetInnerHTML={{__html:noticia.NONovTexto}}></div></p>
             <a href={'/noticias/'+noticia.NONovID} className="relative rounded-md bg-contrast right-0 text-white py-2 px-4 text-sm float-right mt-2 hover:bg-contrast1-600 z-10">Leer más...
             </a>
           </div>
