@@ -232,7 +232,7 @@ function Header() {
               <a href="http://10.1.0.137:8080/AccesoPortalJavaEnvironment/com.accesoportal.homeafiliado" className="changeBtn text-white bg-primary1 hover:bg-primary2 rounded-md px-6 py-2 mr-5 text-sm font-medium uppercase hover:cursor-pointer">
                   <span>Afiliados</span>
                 </a>
-                <a href="http://10.1.0.137:8080/PortalOssegJava/servlet/com.portalosseg.wppresentacartilla" className="changeBtn text-white bg-secondary1 hover:bg-secondary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer">
+                <a href="http://10.1.0.137:8080/AccesoPortalJavaEnvironment/com.accesoportal.homeprestador" className="changeBtn text-white bg-secondary1 hover:bg-secondary2 rounded-md px-6 py-2 text-sm font-medium uppercase hover:cursor-pointer">
                 <span>Prestadores</span>
                 </a>
               </div>
