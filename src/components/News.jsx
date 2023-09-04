@@ -43,7 +43,7 @@ function News() {
               className="flex-none w-2/3 md:w-1/3 mr-8 pb-4 rounded-lg"
             >
               <div className="space-y-4">
-                <div className="aspect-w-16 aspect-h-9 max-h-64">
+                <div className=" min-w-full max-h-64">
                   <img
                     className="object-cover shadow-md hover:shadow-xl rounded-lg"
                     src={`/img/${noticia.NONovNomImg}`}
