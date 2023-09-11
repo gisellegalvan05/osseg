@@ -19,11 +19,11 @@ function Footer() {
         </div>
 
         <div>
-          <a href="www.sssalud.gob.ar" target="_blank" className="font-normal leading-7 text-white dark:text-white hover:underline">Superintendencia de Servicios de Salud</a>
+          <a href="https://www.argentina.gob.ar/sssalud" target="_blank" className="font-normal leading-7 text-white dark:text-white hover:underline">Superintendencia de Servicios de Salud</a>
           <p className="font-normal leading-7 text-white dark:text-white">Órgano de control de obras sociales y entidades de medicina prepaga</p>
           <p className="font-normal leading-7 text-white dark:text-white">0800 222 SALUD (72583)</p>
           <p className="font-normal leading-7 text-white dark:text-white">info@sssalud.gob.ar</p>
-          <p className="font-normal leading-7 text-white dark:text-white"><a className="hover:underline" href="www.sssalud.gob.ar">www.sssalud.gob.ar</a></p>
+          <p className="font-normal leading-7 text-white dark:text-white"><a className="hover:underline" href="https://www.argentina.gob.ar/sssalud"  target="_blank">www.sssalud.gob.ar</a></p>
           <p className="font-normal leading-7 text-white dark:text-white">R.N.O.S. N° 0-0090-1</p>
 
         </div>
@@ -33,7 +33,7 @@ function Footer() {
             <ul className="space-y-4 text-sm">
               <li>
                 <a
-                  href="www.sindicatodelseguro.com.ar" target="_blank"
+                  href="https://www.sindicatodelseguro.com.ar/" target="_blank"
                   className="font-normal leading-7 text-white transition hover:underline dark:text-gray-200"
                 >
                   SINDICATO DEL SEGURO
@@ -42,7 +42,7 @@ function Footer() {
 
               <li>
                 <a
-                  href="www.amtras.org.ar" target="_blank"
+                  href="https://www.amtras.org.ar/" target="_blank"
                   className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                  ASOCIACION MUTUAL DE TRABAJADORES DE SEGUROS - AMTRAS
@@ -58,7 +58,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="personal@osseg.org.ar" 
+                  href="mailto:personal@osseg.org.ar" 
                   className="font-normal text-white transition hover:underline dark:text-gray-200"
                 >
                   ¿Querés trabrajar con nosotros?

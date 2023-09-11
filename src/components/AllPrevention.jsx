@@ -42,7 +42,7 @@ const [news, setNews] = useState([]);
                     {moment(noticia.NONovFecha).format("DD MMM YYYY")}
                   </p>
                 </div>
-                <div className="group relative">
+                <div className="group relative w-96">
                   <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                       {noticia.NONovDescripcion}
                   </h3>
