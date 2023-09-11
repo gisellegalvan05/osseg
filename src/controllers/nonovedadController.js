@@ -3,7 +3,7 @@ import db from '../../config/db.js';
 const today = new Date();
 
 export const novedades = (req,res)=>{
-    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='D' AND NONovFecVigencia < CURRENT_DATE", (err,result)=>{
+    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='D' AND NONovFecVigencia > CURRENT_DATE", (err,result)=>{
         if(err) {
         console.log(err)
         } 
@@ -23,7 +23,7 @@ export const novedad = (req,res)=>{
 }
 
 export const noticiasTop = (req,res)=>{
-        db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='N' AND NONovFecVigencia < CURRENT_DATE ORDER BY NONovFecha DESC limit 6", (err,result)=>{
+        db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='N' AND NONovFecVigencia > CURRENT_DATE ORDER BY NONovFecha DESC limit 6", (err,result)=>{
             if(err) {
             console.log(err)
             } 
@@ -31,7 +31,7 @@ export const noticiasTop = (req,res)=>{
         });   }
 
 export const noticiasAll = (req,res)=>{
-    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo in ('D', 'N') AND NONovFecVigencia < CURRENT_DATE ORDER BY NONovTipo, NONovFecha DESC", (err,result)=>{
+    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo in ('D', 'N') AND NONovFecVigencia > CURRENT_DATE ORDER BY NONovTipo, NONovFecha DESC", (err,result)=>{
         if(err) {
         console.log(err)
         } 
@@ -39,7 +39,7 @@ export const noticiasAll = (req,res)=>{
     });   }
 
 export const prevencionAll = (req,res)=>{
-    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='P' AND NONovFecVigencia < CURRENT_DATE", (err,result)=>{
+    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='P' AND NONovFecVigencia > CURRENT_DATE", (err,result)=>{
         if(err) {
         console.log(err)
         } 
@@ -47,7 +47,7 @@ export const prevencionAll = (req,res)=>{
     });   }
 
 export const prevencionTop = (req,res)=>{
-    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='P' AND NONovFecVigencia < CURRENT_DATE ORDER BY NONovFecha DESC limit 3", (err,result)=>{
+    db.query("SELECT NONovID, NONovTipo, NONovDescripcion, NONovFecha, NONovFecVigencia, NONovTexto, NONovNomImg FROM nonovedad WHERE NONovTipo='P' AND NONovFecVigencia > CURRENT_DATE ORDER BY NONovFecha DESC limit 3", (err,result)=>{
         if(err) {
         console.log(err)
         } 
