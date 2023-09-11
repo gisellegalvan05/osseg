@@ -112,7 +112,7 @@ function classNames(...classes) {
                       {programa.NONovDescripcion}
                       </dt>
                       <dd className="line-clamp-2 mt-2 text-base leading-7 text-gray-600">
-                      {programa.NONovTexto}
+                      <div dangerouslySetInnerHTML={{__html:programa.NONovTexto}}></div>
                       </dd>
                     </div>
                   </div>

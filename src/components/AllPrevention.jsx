@@ -47,7 +47,7 @@ const [news, setNews] = useState([]);
                       {noticia.NONovDescripcion}
                   </h3>
                   <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    {noticia.NONovTexto}
+                  <div dangerouslySetInnerHTML={{__html:noticia.NONovTexto}}></div>
                   </p>
                 </div>
               </article>
