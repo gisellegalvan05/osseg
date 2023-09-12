@@ -31,7 +31,7 @@ function AllNews() {
               >
                 <div className=" pb-3">
                   <img
-                    className="h-auto w-96 max-h-60 object-cover shadow-md hover:shadow-xl rounded-lg"
+                    className="h-60 w-96 max-h-60 object-cover shadow-md hover:shadow-xl rounded-lg"
                     src={`/img/${noticia.NONovNomImg}`}
                     alt=""
                   />

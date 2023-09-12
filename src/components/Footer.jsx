@@ -13,7 +13,7 @@ function Footer() {
       </div>
       <div>
           <p className="font-normal leading-7 text-white dark:text-white">Carlos Pellegrini 575 (C1009ABK)<br/> CABA</p>
-          <p className="font-normal leading-7 text-white dark:text-white">Teléfonos: 0800-777-67734 / <br/> 4131-2100</p> 
+          <p className="font-normal leading-7 text-white dark:text-white">Teléfonos: 0800-777-67734  <br/> 4131-2100</p> 
         </div>
 
         <div>
