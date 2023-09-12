@@ -3,7 +3,7 @@ function Footer() {
   return (
     <footer aria-label="Site Footer" className="bg-primary1 dark:bg-gray-900">
   <div
-    className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
+    className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:space-y-6 lg:px-8 lg:py-6"
   >
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
       <div>
@@ -12,10 +12,8 @@ function Footer() {
         </div>
       </div>
       <div>
-          <p className="font-normal leading-7 text-white dark:text-white">Carlos Pellegrini 575 (C1009ABK), CABA</p>
-          <p className="font-normal leading-7 text-white dark:text-white">Teléfonos: 0800-777-67734 / <br/> 4131-2100</p>
-          <img className="mt-14 ml-auto mr-auto" src="/img/qr.png" alt="" />
-          
+          <p className="font-normal leading-7 text-white dark:text-white">Carlos Pellegrini 575 (C1009ABK)<br/> CABA</p>
+          <p className="font-normal leading-7 text-white dark:text-white">Teléfonos: 0800-777-67734 / <br/> 4131-2100</p> 
         </div>
 
         <div>
@@ -68,7 +66,7 @@ function Footer() {
           </nav>
         </div>
     </div>
-
+    <img className="mt-10 ml-auto mr-auto" src="/img/qr.png" alt="" />
     <p className=" text-center text-xs text-white dark:text-gray-400">
       &copy; 2023. OSSEG. Todos los derechos reservados.
     </p>

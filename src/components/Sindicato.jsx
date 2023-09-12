@@ -2,7 +2,7 @@
 function Sindicato() {
   return (
     <>
-      <div className=" w-full relative xs:h-80 xs:flex">
+      <div className=" w-full relative xs:h-64 xs:flex">
         <img
           src="./img/movilizacion.png"
           alt=""
@@ -17,7 +17,7 @@ function Sindicato() {
                 impedit harum reprehenderit vel sit neque modi.
               </p>
             </div>
-            <div className="self-center md:left-1/4 relative xs:top-6 md:top-0">
+            <div className="self-center md:left-1/4 relative xs:top-6 md:-top-5">
               <a href="https://www.sindicatodelseguro.com.ar/" target="_blank" className="bg-contrast py-2 px-9 text-white text-lg rounded-lg hover:bg-contrast1-600">
                 Ir al Sitio
               </a>

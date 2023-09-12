@@ -45,6 +45,10 @@ export default {
         'montserrat': ['Montserrat'],
     },
       maxWidth: {
+        '80r': '80rem',
+        '85r': '85rem',
+        '90r': '90rem',
+        '95r': '95rem',
         '100r': '100rem',
       },
       height: {

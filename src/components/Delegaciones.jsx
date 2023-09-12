@@ -62,7 +62,7 @@ function Delegaciones() {
     loadSedes()
   },[]);
 
-  //const center = {lat: -34.75562973721628, lng:-58.40326811596806 };
+  const center = {lat: -34.75562973721628, lng:-58.40326811596806 };
   
   return (
     <>
@@ -158,11 +158,11 @@ function Delegaciones() {
             </div>
           
             <div id="map2" className=" col-span-2">
-    
             </div>
           </dl>
         </div>
       </div>  
+      <MapApp myCenter={center} myZoom={7}></MapApp>
     </div>
     </>
   )

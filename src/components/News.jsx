@@ -55,14 +55,14 @@ function News() {
                         <p className=' text-sm self-center'> 
                         {moment(noticia.NONovFecha).format("DD MMM YYYY")}
                             </p>
-                        <button className=' text-xs bg-secondary1 text-white px-3 py-2 rounded-lg ml-5'>
-                            Afiliados
-                            </button>
+                        
                     </div>
                   <div className="text-lg leading-6 font-medium space-y-1">
+                  <a href={'/noticias/'+noticia.NONovID}>
                     <h3 className="font-bold text-gray-800 text-3xl mb-2">
                     {noticia.NONovDescripcion}
                     </h3>
+                    </a>
                   </div>
                   <div className="text-lg">
                     <p className="line-clamp-3">

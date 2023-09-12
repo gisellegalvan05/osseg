@@ -29,12 +29,14 @@ function LatestNews() {
             </div>
           <div className="pl-5 flex items-center gap-x-4 text-xs mt-2">
             <time dateTime="2020-03-16" className="text-primary2">{moment(noticia.NONovFecha).format("DD MMM YYYY")}</time>
-            <p href="#" className="relative z-10 rounded-md bg-gray-200 px-3 py-1.5 font-medium text-primary2 hover:bg-gray-300">Afiliados</p>
+            <p href="#" className="relative z-10 rounded-md bg-gray-200 px-3 py-1.5 font-medium text-primary2 hover:bg-gray-300">Destacadas</p>
           </div>
           <div className="px-5 pb-5 group relative">
+          <a href={'/noticias/'+noticia.NONovID}>
             <h3 className="mt-3 text-lg font-semibold leading-6 text-secondary2">
                 {noticia.NONovDescripcion}
             </h3>
+            </a>
             <p className="mt-4 line-clamp-3 text-sm leading-6 text-gray-700"><div dangerouslySetInnerHTML={{__html:noticia.NONovTexto}}></div></p>
             <a href={'/noticias/'+noticia.NONovID} className="relative rounded-md bg-contrast right-0 text-white py-2 px-4 text-sm float-right mt-2 hover:bg-contrast1-600 z-10">Leer más...
             </a>
