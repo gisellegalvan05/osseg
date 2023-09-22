@@ -30,7 +30,7 @@ function OneNews({ noticiaId }) {
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                   {news[0].NONovDescripcion}
                 </h1>
-                <div className=" text-center -ml-12 -mt-12 p-12 lg:top-4 lg:overflow-hidden">
+                <div className="text-center -ml-12 -mt-12 p-12 lg:top-4 lg:overflow-hidden">
             <img
               className=" mt-5 mx-auto md:w-[35rem] max-w-none rounded-xl bg-gray-900 ring-1 ring-gray-400/10 sm:w-[48rem]"
               src={`/img/${noticia.NONovNomImg}`}
