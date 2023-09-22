@@ -132,7 +132,7 @@ function Header() {
                                     item.current
                                       ? "bg-transparent text-primary2 cool-link"
                                       : "text-primary1 hover:bg-gray-700 hover:bg-opacity-10 hover:text-primary2 cool-link",
-                                    "mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 inline-flex w-full justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                                    "lg:mx-1 xs:px-1 xl:px-3 py-2 xs:text-xs 2xl:text-sm font-medium transition-all duration-300 inline-flex w-full justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
                                   )}
                                 >
                                   {item.name}

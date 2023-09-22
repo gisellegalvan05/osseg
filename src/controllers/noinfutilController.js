@@ -1,7 +1,7 @@
 import db from '../../config/db.js';
 
 export const internos = (req,res)=>{
-    db.query("SELECT NOInfUtilID, NOInfTipo, NOInfDescripcion, NOInfTelefono, NOInfLink, NOInflDireccion, NOInfUtilProv, NOInfGeolocation,NOInfUtilNomImg FROM noinfutil WHERE NOInfTipo='T' ", (err,result)=>{
+    db.query("SELECT NOInfUtilID, NOInfTipo, NOInfDescripcion, NOInfTelefono, NOInfLink, NOInflDireccion, NOInfUtilProv, NOInfGeolocation,NOInfUtilNomImg FROM noinfutil WHERE NOInfTipo='T' ORDER BY NOInfDescripcion", (err,result)=>{
         if(err) {
         console.log(err)
         } 
